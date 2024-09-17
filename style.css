@@ -15,7 +15,7 @@ body {
 }
 
 .mem {
-    width: 80%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -26,7 +26,7 @@ body {
     display: block;
     position: relative;
     overflow: hidden;
-    margin-top: 80rem;
+    margin-top: 45rem;
 }
 
 .conteineer-mem {
@@ -87,7 +87,7 @@ body {
 }
 
 .btn-mem:hover {
-    color: rgb(189, 245, 206);
+    color: rgb(199, 238, 211);
 }
 
 .btn-mem.active {
