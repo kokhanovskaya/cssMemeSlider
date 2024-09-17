@@ -10,25 +10,38 @@ html {
 }
 
 body {
-background-color: rgb(42, 40, 40);
+    background-color: rgb(42, 40, 40);
 }
 
 .mem-slider {
     display: block;
-
+    position: relative;
+    overflow: hidden;
+    width: 800rem;
+    margin: auto;
 }
 
 .conteineer-mem {
-    display: flex;
-    margin: auto;
-    width: 800rem;
+    display: none; 
+    transform: translateX(100%);
+    opacity: 0;
     box-shadow: 0rem 5rem 10rem 0rem rgba(0, 0, 0, 0.5);
-    margin-top: 10%;
-    flex-direction: column;
+    z-index: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
 }
 
-.conteineer-mem:not(:first-child) {
-    display: none;
+.conteineer-mem.active {
+    display: flex;
+    margin: auto;
+    margin-top: 10%;
+    flex-direction: column;
+    opacity: 1;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1; 
 }
 
 .info-mem {
@@ -46,9 +59,14 @@ background-color: rgb(42, 40, 40);
 .btn-mem {
     font-size: 40em;
     color: rgb(23, 240, 92);
+    cursor: pointer;
 }
 
 .btn-mem:hover {
     color: rgb(189, 245, 206);
 }
 
+.btn-mem.active {
+    border-color: rgb(23, 240, 92);
+    color: rgb(42, 40, 40);
+}
