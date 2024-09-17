@@ -13,12 +13,19 @@ body {
     background-color: rgb(42, 40, 40);
 }
 
+.mem {
+    width: 800rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 .mem-slider {
+    width: 100%;
     display: block;
     position: relative;
     overflow: hidden;
-    width: 800rem;
-    margin: auto;
+    margin-top: 80rem;
 }
 
 .conteineer-mem {
@@ -27,8 +34,8 @@ body {
     opacity: 0;
     box-shadow: 0rem 5rem 10rem 0rem rgba(0, 0, 0, 0.5);
     z-index: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .conteineer-mem.active {
@@ -54,12 +61,24 @@ body {
     font-size: 20em;
     color: white;
     margin-top: 20rem;
+    display: none;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.text-mem.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .btn-mem {
     font-size: 40em;
     color: rgb(23, 240, 92);
     cursor: pointer;
+    padding: 0.2em; 
+    transition: color 0.3s ease, border 0.3s ease;
 }
 
 .btn-mem:hover {
@@ -67,6 +86,7 @@ body {
 }
 
 .btn-mem.active {
-    border-color: rgb(23, 240, 92);
-    color: rgb(42, 40, 40);
+    color:rgb(25, 67, 38); 
+    transform: scale(1.5);
+    
 }
