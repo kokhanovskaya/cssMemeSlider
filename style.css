@@ -15,7 +15,7 @@ body {
 }
 
 .mem {
-    width: 80%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -26,7 +26,7 @@ body {
     display: block;
     position: relative;
     overflow: hidden;
-    margin-top: 85rem;
+    margin-top: 45rem;
 }
 
 .conteineer-mem {
