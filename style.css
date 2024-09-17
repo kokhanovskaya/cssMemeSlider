@@ -9,12 +9,13 @@ html {
     }
 }
 
+
 body {
     background-color: rgb(42, 40, 40);
 }
 
 .mem {
-    width: 800rem;
+    width: 80%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -55,6 +56,10 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 10rem 35rem;
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+
+    }
 }
 
 .text-mem {
@@ -89,4 +94,10 @@ body {
     color:rgb(25, 67, 38); 
     transform: scale(1.5);
     
+}
+
+.button {
+    @media (max-width: 768px) {
+    margin: auto;
+    }
 }
