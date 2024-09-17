@@ -10,5 +10,45 @@ html {
 }
 
 body {
-    background-color: aqua;
+background-color: rgb(42, 40, 40);
 }
+
+.mem-slider {
+    display: block;
+
+}
+
+.conteineer-mem {
+    display: flex;
+    margin: auto;
+    width: 800rem;
+    box-shadow: 0rem 5rem 10rem 0rem rgba(0, 0, 0, 0.5);
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+.conteineer-mem:not(:first-child) {
+    display: none;
+}
+
+.info-mem {
+    display: flex;
+    justify-content: space-between;
+    margin: 10rem 35rem;
+}
+
+.text-mem {
+    font-size: 20em;
+    color: white;
+    margin-top: 20rem;
+}
+
+.btn-mem {
+    font-size: 40em;
+    color: rgb(23, 240, 92);
+}
+
+.btn-mem:hover {
+    color: rgb(189, 245, 206);
+}
+
