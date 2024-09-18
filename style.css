@@ -20,7 +20,7 @@ body {
 }
 
 .mem {
-    width: 80%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -121,9 +121,7 @@ input#slide4:checked ~ .info-mem .button label[for="slide4"] {
     transform: scale(1.5);
     border: 2px solid rgb(23, 240, 92);
 }
-input[type="radio"]:checked ~ .info-mem .button label {
-    background-color: transparent; 
-}
+
 .button {
     display: flex;
     gap: 1em;
