@@ -1,21 +1,26 @@
 html {
     scroll-behavior: smooth;
-    font-size: calc(1vw/12.8);
-    @media (max-width: 768px) {
-        font-size: calc(1vw/7.68);
-    }
-    @media (max-width: 320px) {
-        font-size: calc(1vw/3.2);
+    font-size: calc(1vw / 12.8);
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: calc(1vw / 7.68);
     }
 }
 
+@media (max-width: 320px) {
+    html {
+        font-size: calc(1vw / 3.2);
+    }
+}
 
 body {
     background-color: rgb(42, 40, 40);
 }
 
 .mem {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -29,36 +34,47 @@ body {
     margin-top: 45rem;
 }
 
+input[type="radio"] {
+    display: none;
+}
+
 .conteineer-mem {
-    display: none; 
-    transform: translateX(100%);
+    display: none;
     opacity: 0;
-    box-shadow: 0rem 5rem 10rem 0rem rgba(0, 0, 0, 0.5);
-    z-index: 0;
     transform: translateX(100%);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.conteineer-mem.active {
+input#slide1:checked ~ .slides #conteineer-1,
+input#slide2:checked ~ .slides #conteineer-2,
+input#slide3:checked ~ .slides #conteineer-3,
+input#slide4:checked ~ .slides #conteineer-4 {
     display: flex;
-    margin: auto;
-    margin-top: 10%;
     flex-direction: column;
     opacity: 1;
     transform: translateX(0);
     width: 100%;
     height: 100%;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    z-index: 1; 
+}
+input#slide1:not(:checked) ~ .mem-slider #conteineer-1,
+input#slide2:not(:checked) ~ .mem-slider #conteineer-2,
+input#slide3:not(:checked) ~ .mem-slider #conteineer-3,
+input#slide4:not(:checked) ~ .mem-slider #conteineer-4 {
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 0;
 }
 
 .info-mem {
     display: flex;
     justify-content: space-between;
     margin: 10rem 35rem;
-    @media (max-width: 768px) {
-        flex-direction: column-reverse;
+}
 
+@media (max-width: 768px) {
+    .info-mem {
+        flex-direction: column-reverse;
+        align-items: center;
     }
 }
 
@@ -66,38 +82,56 @@ body {
     font-size: 20em;
     color: white;
     margin-top: 20rem;
-    display: none;
-    opacity: 0;
     transform: translateY(20%);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.text-mem.active {
-    display: block;
+input#slide1:checked ~ .info-mem #text-1,
+input#slide2:checked ~ .info-mem #text-2,
+input#slide3:checked ~ .info-mem #text-3,
+input#slide4:checked ~ .info-mem #text-4 {
     opacity: 1;
     transform: translateY(0);
+    visibility: visible; /* Делает текст видимым */
 }
-
+input#slide1:not(:checked) ~ .info-mem #text-1,
+input#slide2:not(:checked) ~ .info-mem #text-2,
+input#slide3:not(:checked) ~ .info-mem #text-3,
+input#slide4:not(:checked) ~ .info-mem #text-4 {
+    opacity: 0;
+    transform: translateY(20%);
+}
 .btn-mem {
     font-size: 40em;
     color: rgb(23, 240, 92);
     cursor: pointer;
-    padding: 0.2em; 
-    transition: color 0.3s ease, border 0.3s ease;
+    padding: 0.2em;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-mem:hover {
     color: rgb(199, 238, 211);
 }
 
-.btn-mem.active {
-    color:rgb(25, 67, 38); 
+input#slide1:checked ~ .info-mem .button label[for="slide1"],
+input#slide2:checked ~ .info-mem .button label[for="slide2"],
+input#slide3:checked ~ .info-mem .button label[for="slide3"],
+input#slide4:checked ~ .info-mem .button label[for="slide4"] {
+    color: rgb(25, 67, 38);
     transform: scale(1.5);
-    
+    border: 2px solid rgb(23, 240, 92);
 }
 
 .button {
-    @media (max-width: 768px) {
-    margin: auto;
+    display: flex;
+    gap: 1em;
+    justify-content: flex-end;
+
+}
+
+@media (max-width: 768px) {
+    .button {
+        margin: auto;
+        justify-content: center;
     }
 }
